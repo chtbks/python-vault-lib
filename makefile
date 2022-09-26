@@ -1,11 +1,8 @@
 # Define required macros here
 SHELL = /bin/sh
 
-install_pip:
-	python3 -m pip install --upgrade pip
-
 setup:
-	pip install twine
+	python3 -m pip install --upgrade pip && pip install twine && python3 setup.py build
 
 install:
 	python3 setup.py install
@@ -17,4 +14,6 @@ pip_install:
 	python3 -m pip install --index-url https://pypi-registry.chatbooks.com/simple/ --upgrade build
 
 pypy_upload:
-	python3 setup.py sdist &&  python3 -m twine upload --repository https://pypi-registry.chatbooks.com/simple/ dist/*
+	python3 setup.py sdist && \
+	twine register dist/core_vault_auth_lib-1.0.0.tar.gz --repository cb && \
+	twine upload --repository cb dist/*
