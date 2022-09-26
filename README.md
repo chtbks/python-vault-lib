@@ -14,6 +14,7 @@ To install this package run
 
 [packaging guide]: https://packaging.python.org
 [distribution tutorial]: https://packaging.python.org/tutorials/packaging-projects/
+[chatbooks repository]: https://pypi-registry.chatbooks.com/
 
 if you are building a new version make sure you have this file configured 
 
