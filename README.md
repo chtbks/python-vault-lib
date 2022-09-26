@@ -2,6 +2,15 @@
 
 ![Python Logo](https://www.python.org/static/community_logos/python-logo.png "Sample inline image")
 
+
+* get unit tests working - pass, role
+* pushable to pypy repo
+* login feature working
+* Install into Analytics Project
+
+To install this package run
+`pip install --index-url https://pypi-registry.chatbooks.com/simple/ cb-python-vault-lib [PACKAGE2...]`
+
 A sample project that exists as an aid to the [Python Packaging User
 Guide][packaging guide]'s [Tutorial on Packaging and Distributing
 Projects][distribution tutorial].
