@@ -8,7 +8,9 @@
 * approle auth testable
 
 To install this package run
+
 `pip install --index-url https://pypi-registry.chatbooks.com/simple/ core_vault_auth_lib`
+
 `pip install -i https://pypi-registry.chatbooks.com/pypi core_vault_auth_lib`
 
 
@@ -19,7 +21,7 @@ To install this package run
 if you are building a new version make sure you have this file configured 
 
 ~/.pypirc 
-``
+```
 [distutils]
 index-servers =
     cb
@@ -29,4 +31,4 @@ repository = https://pypi-registry.chatbooks.com/
 username = cb
 password = cb
 
-``
+```
