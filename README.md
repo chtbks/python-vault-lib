@@ -9,9 +9,7 @@
 
 To install this package run
 
-`pip install --index-url https://pypi-registry.chatbooks.com/simple/ core_vault_auth_lib`
-
-`pip install -i https://pypi-registry.chatbooks.com/pypi core_vault_auth_lib`
+`pip install -i https://pypi-registry.chatbooks.com core_vault_auth_lib`
 
 
 [packaging guide]: https://packaging.python.org

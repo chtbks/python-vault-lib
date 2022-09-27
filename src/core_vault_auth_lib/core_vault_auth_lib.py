@@ -1,6 +1,5 @@
 import os
 import hvac
-import json
 
 
 class SecretsVault:
