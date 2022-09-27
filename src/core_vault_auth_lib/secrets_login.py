@@ -13,4 +13,5 @@ def login():
         p = input()
         v.authenticate(u, p)
     else:
+        print("logging in with existing token")
         v.authenticate()

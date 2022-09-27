@@ -39,7 +39,7 @@ class SecretsVault:
                 self.client.auth_cubbyhole(token)
 
             else:
-
+                os.unsetenv('CB_VAULT_TOKEN')
                 Exception("Invalid Auth")
 
     def get_secrets(self, envPath,
