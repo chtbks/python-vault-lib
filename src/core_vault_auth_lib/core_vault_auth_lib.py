@@ -6,6 +6,15 @@ class SecretsVault:
     client = None
     secrets = []  # static
 
+    def login(self):
+        print("Auth Not Found on CB_VAULT_TOKEN, or CB_VAULT_ROLE_ID & CB_VAULT_SECRET_ID\n")
+        print("Please log in with your vault user/pass\n")
+        print("Please enter your username\n")
+        u = input()
+        print("Please enter your password\n")
+        p = input()
+        self.authenticate(user=u, password=p)
+
     def authenticate(self, user=None, password=None, token=None):
 
         vaultUrl = os.getenv('CB_VAULT_URI', 'https://secrets-api.chatbooks.com:8200')
@@ -33,6 +42,7 @@ class SecretsVault:
                 # print(selfToken['data']['id'])
                 # self.client.renew_token(selfToken['data']['id'])
                 os.environ['CB_VAULT_TOKEN'] = selfToken['data']['id']
+                self.client.auth_cubbyhole(os.environ['CB_VAULT_TOKEN'])
 
             elif token:
 
@@ -40,7 +50,7 @@ class SecretsVault:
 
             else:
                 os.unsetenv('CB_VAULT_TOKEN')
-                Exception("Invalid Auth")
+                self.login()
 
     def get_secrets(self, envPath,
                     sharedPath=None, store='cb'):

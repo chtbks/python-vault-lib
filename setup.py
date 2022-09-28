@@ -37,7 +37,7 @@ setup(
     # project code, see
     # project code, see
     # https://packaging.python.org/guides/single-sourcing-package-version/
-    version="1.0.3",  # Required
+    version="1.0.7",  # Required
     # This is a one-line description or tagline of what your project does. This
     # corresponds to the "Summary" metadata field:
     # https://packaging.python.org/specifications/core-metadata/#summary
