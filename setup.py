@@ -37,7 +37,7 @@ setup(
     # project code, see
     # project code, see
     # https://packaging.python.org/guides/single-sourcing-package-version/
-    version="1.0.7",  # Required
+    version="1.0.11",  # Required
     # This is a one-line description or tagline of what your project does. This
     # corresponds to the "Summary" metadata field:
     # https://packaging.python.org/specifications/core-metadata/#summary
@@ -128,7 +128,7 @@ setup(
     #
     # For an analysis of "install_requires" vs pip's requirements files see:
     # https://packaging.python.org/discussions/install-requires-vs-requirements/
-    install_requires=["peppercorn"],  # Optional
+    install_requires=["peppercorn", "hvac"],  # Optional
     # List additional groups of dependencies here (e.g. development
     # dependencies). Users will be able to install these using the "extras"
     # syntax, for example:

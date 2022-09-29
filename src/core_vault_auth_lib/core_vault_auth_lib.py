@@ -42,10 +42,9 @@ class SecretsVault:
                 # print(selfToken['data']['id'])
                 # self.client.renew_token(selfToken['data']['id'])
                 os.environ['CB_VAULT_TOKEN'] = selfToken['data']['id']
-                self.client.auth_cubbyhole(os.environ['CB_VAULT_TOKEN'])
+                # print(selfToken['data']['id'])
 
             elif token:
-
                 self.client.auth_cubbyhole(token)
 
             else:
@@ -54,6 +53,9 @@ class SecretsVault:
 
     def get_secrets(self, envPath,
                     sharedPath=None, store='cb'):
+
+        if len(self.secrets) > 0:
+            return self.secrets
 
         self.authenticate()
 

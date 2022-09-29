@@ -11,17 +11,11 @@ To install this package run
 
 `pip install -i https://pypi-registry.chatbooks.com core_vault_auth_lib`
 
-## for local development of your app you need to log in using your user/pass so run 
-
-```bash
-python3 core_vault_auth_lib login
-```
-
 ## to access the secrets in your app
 ```python
-import core_vault_auth_lib.core_vault_auth_lib as vault
+from core_vault_auth_lib import SecretsVault
 
-v = vault.SecretsVault()
+v = SecretsVault()
 v.authenticate()
 creds = v.get_secrets('job-server', store='bi')
 
