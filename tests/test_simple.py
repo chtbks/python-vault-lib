@@ -36,6 +36,12 @@ class TestSimple(unittest.TestCase):
         secrets = v.get_secrets('unit', store='vault_unit_test')
         self.assertEqual(secrets['test'], 'test')
 
+    # def test_login_with_token(self):
+    #     v = SecretsVault()
+    #     v.authenticate(token='')
+    #     secrets = v.get_secrets('unit', store='vault_unit_test')
+    #     self.assertEqual(secrets['test'], 'test')
+
 
 if __name__ == '__main__':
     unittest.main()

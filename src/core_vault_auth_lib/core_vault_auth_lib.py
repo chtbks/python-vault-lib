@@ -21,7 +21,7 @@ class SecretsVault:
 
         if self.client is None or self.client.is_authenticated() is False:
 
-            self.client = hvac.Client(url=vaultUrl)
+            self.client = hvac.Client(url=vaultUrl, token=token)
 
             roleId = os.getenv('CB_VAULT_ROLE_ID')
             secretId = os.getenv('CB_VAULT_SECRET_ID')
@@ -45,7 +45,7 @@ class SecretsVault:
                 # print(selfToken['data']['id'])
 
             elif token:
-                self.client.auth_cubbyhole(token)
+                print("logged in using token")
 
             else:
                 os.unsetenv('CB_VAULT_TOKEN')
