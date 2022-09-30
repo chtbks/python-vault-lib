@@ -4,6 +4,7 @@ import hvac
 
 class SecretsVault:
     client = None
+    token = None
     secrets = []  # static
 
     def login(self):
@@ -18,6 +19,9 @@ class SecretsVault:
     def authenticate(self, user=None, password=None, token=None):
 
         vaultUrl = os.getenv('CB_VAULT_URI', 'https://secrets-api.chatbooks.com:8200')
+
+        if token is None:
+            token = self.token
 
         if self.client is None or self.client.is_authenticated() is False:
 
@@ -46,6 +50,7 @@ class SecretsVault:
 
             elif token:
                 print("logged in using token")
+                self.token = token
 
             else:
                 os.unsetenv('CB_VAULT_TOKEN')
