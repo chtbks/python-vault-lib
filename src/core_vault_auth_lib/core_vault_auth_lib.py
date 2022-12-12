@@ -25,7 +25,7 @@ class SecretsVault:
 
         if self.client is None or self.client.is_authenticated() is False:
 
-            self.client = hvac.Client(url=vaultUrl, token=token)
+            self.client = hvac.Client(url=vaultUrl, token=token, verify=False)
 
             roleId = os.getenv('CB_VAULT_ROLE_ID')
             secretId = os.getenv('CB_VAULT_SECRET_ID')
